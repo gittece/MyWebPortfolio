@@ -402,9 +402,23 @@ h1{
 /*FOOTER*/
 .footer-area{
     background-color: rgba(30, 46, 30, 0.9);
+    text-align: center;
+    padding: 10px;
 }
 .footer-area h2{
     color: white;
+}
+.social a{
+    color: white;
+    text-decoration: none;
+    background-color: green;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 50%;
+    width: 18px;
+    height: 20px;
+    line-height: 38px;
+
 }
 footer{
     color: lightgray;
