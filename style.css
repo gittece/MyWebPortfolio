@@ -35,9 +35,7 @@
     font-family: Poppins;
 }
 body{
-    background-image:url(images/bg-image.png);
-    background-attachment: fixed;
-    background-size: cover;
+    background-color: black;
     opacity: 0;
     animation: fadeIn 2s forwards;
     transition: 1s ease-in-out;
@@ -514,7 +512,7 @@ footer{
     }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 390px) {
     #menu-icon{
         display: block;
         color:#fff ;
