@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio | Quizzes</title>
+        <link rel="icon" href="images/mlogo.png">
+        <link rel="stylesheet" href="lab3/font_awesome4_cheatsheet-master/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+      <!--js navbar-->
+    <header>
+        <a href="#" class="logo"><b>4TH<i>folio</i></b></a>
+        <ul class="navbar">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <li class="bx bx-menu" id="menu-icon"><a class="bar"><i class="fa-solid fa-bars"></i></a></li>
+        <script type="text/javascript" src="navbar.js"></script>
+    </header>
+
+
+    <div class="quiz-area">
+        <div class="pt-container">
+            <h1>PRE-TESTS</h1>
+            <div class="image-container">
+                <div class="image"><img src="quizzes/pretest1.jpg" alt="pt1"></div>
+                <div class="image"><img src="quizzes/pretest2.jpg" alt="pt2"></div>
+                <div class="image"><img src="quizzes/pretest3.jpg" alt="pt3"></div>
+                <div class="image"><img src="quizzes/pretest4.jpg" alt="pt4"></div>
+                <div class="image"><img src="quizzes/pretest5.jpg" alt="pt5"></div>
+                
+            
+                <h1>POST-TESTS</h1>
+                <div class="image-container">
+                    <div class="image"><img src="quizzes/posttest1.jpg" alt="pt1"></div>
+                    <div class="image"><img src="quizzes/posttest2.jpg" alt="pt2"></div>
+                    <div class="image"><img src="quizzes/posttest3.jpg" alt="pt3"></div>
+                    <div class="image"><img src="quizzes/posttest4.jpg" alt="pt4"></div>
+                    <div class="image"><img src="quizzes/posttest5.jpg" alt="pt5"></div>
+                </div>
+            </div>
+
+            <div class="popup-image">
+                <span>&times;</span>
+                <img src="quizzes/pretest1.jpg" alt="pt1">
+            </div>
+    </div>
+</div>
+
+
+<script>
+    document.querySelectorAll('.image-container img').forEach(image =>{
+        image.onclick = () =>{
+            document.querySelector('.popup-image').style.display = 'block';
+            document.querySelector('.popup-image img').src = image.getAttribute('src');
+        }
+    });
+
+    document.querySelector('.popup-image span').onclick = () =>{
+        document.querySelector('.popup-image').style.display = 'none';    
+    }
+</script>
+
+
+</body>
+</html>
