@@ -20,11 +20,147 @@
             <li><a href="about.html">About</a></li>
         </ul>
         <li class="bx bx-menu" id="menu-icon"><a class="bar"><i class="fa-solid fa-bars"></i></a></li>
-        <script type="text/javascript" src="navbar.js"></script>
+        <script type="text/javascript" src="functions.js"></script>
     </header>
 
+    <div class="project-box">
+        <div class="project-card">
+            <img src="projects/project1/1.png" alt="project1">
+            <div>
+                <h3>FIRST PERSONAL PORTFOLIO</h3>
+                <p>This portfolio was made year 2023, during my freshmen years. Additionally, I was able to
+                    explore anything that has and hasn't been taught to us.</p>
+            </div>
+                <div class="btn">Review Project</div>
+        </div>
 
- 
+        <div class="project-card">
+            <img src="projects/project2/1.png" alt="project1">
+            <div>
+                <h3>FANBASE WEBSITE</h3>
+                <p>This project was made year 2024, I was 2nd Year College. I collaborated with 
+                    Ms. Clarisse Orana. I started learning about being minimalist and
+                    understanding the flow of my codes.
+                </p>
+            </div>
+                <div class="btn">Review Project</div>
+        </div>
+
+        <div class="project-card">
+            <img src="projects/project3/1.jpg" alt="project1">
+            <div>
+                <h3>SILANGANAN STUDIOS</h3>
+                <p>This project was made year 2024, I was 2nd Year College. 
+                    I started learning about being minimalist and
+                    understanding the flow of my codes. 
+                </p>
+            </div>
+                <div class="btn">Review Project</div>
+        </div>
+    </div>
+
+
+    <div class="project-box">
+        <div class="project-card">
+            <img src="projects/project4/1.png" alt="project1">
+            <div>
+                <h3>CLAUDY NAILS</h3>
+                <p>One of my many collaborative prototype. A project last 2024, with Ms. Bajo, Ms. Morales, 
+                    Mr. Lorilla, Mr. Arana, and Mr. Guillermo. 
+                </p>
+            </div>
+                <div class="btn">Review Project</div>
+        </div>
+
+        <div class="project-card">
+            <img src="projects/works/1.jpg" alt="project1">
+            <div>
+                <h3>DIGITAL WORKS</h3>
+                <p>Sample of digital materials I've created. 
+                </p>
+            </div>
+                <div class="btn">Review Project</div>
+        </div>
+    </div>
+
+<div class="popup" id="popup">
+<span class="close" id="closePopup">&times;</span>     
+    <div class="popup-content">
+        <img src="" id="popup-img" alt="Slideshow Image">
+        <div class="popup-controls">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </div>
+</div>
+
+
+ <script>
+    const popup = document.getElementById("popup");
+        const popupImg = document.getElementById("popup-img");
+        const closeBtn = document.querySelector(".close");
+        const prevBtn = document.getElementById("prev");
+        const nextBtn = document.getElementById("next");
+        const buttons = document.querySelectorAll(".btn");
+        
+        const slides = {
+            0: ["projects/project1/1.png", "projects/project1/2.png", "projects/project1/3.png", "projects/project1/4.png", "projects/project1/5.png", 
+            "projects/project1/4.png", "projects/project1/5.png", "projects/project1/6.png", "projects/project1/7.png",
+            "projects/project1/8.png"],
+            1: ["projects/project2/1.png", "projects/project2/2.png", "projects/project2/3.png", 
+            "projects/project2/4.png", "projects/project2/5.png", "projects/project2/6.png", 
+            "projects/project2/7.png", "projects/project2/8.png", "projects/project2/9.png", 
+            "projects/project2/10.png", "projects/project2/11.png", "projects/project2/12.png", "projects/project2/13.png"],
+            2: ["projects/project3/1.jpg", "projects/project3/2.jpg", "projects/project3/3.jpg", "projects/project3/4.jpg",
+            "projects/project3/5.jpg", "projects/project3/6.jpg", "projects/project3/7.jpg", "projects/project3/8.jpg",
+            "projects/project3/9.jpg", "projects/project3/10.jpg", "projects/project3/11.jpg", "projects/project3/12.jpg",
+            "projects/project3/13.jpg", "projects/project3/14.jpg", "projects/project3/15.jpg", "projects/project3/16.jpg",
+            "projects/project3/17.jpg", "projects/project3/18.jpg", "projects/project3/19.jpg", "projects/project3/20.jpg",
+            "projects/project3/21.jpg", "projects/project3/22.jpg", "projects/project3/23.jpg", "projects/project3/24.jpg"],
+            3: ["projects/project4/1.png", "projects/project4/2.png", "projects/project4/3.png", 
+            "projects/project4/4.png", "projects/project4/5.png", "projects/project4/6.png", 
+            "projects/project4/7.png", "projects/project4/8.png", "projects/project4/9.png", 
+            "projects/project4/10.png", "projects/project4/11.png", "projects/project4/12.png", 
+            "projects/project4/13.png",  "projects/project4/14.png", "projects/project4/15.png", "projects/project4/16.png",
+            "projects/project4/17.png", "projects/project4/18.png"],
+            4: ["projects/works/1.jpg", "projects/works/2.jpg", "projects/works/3.jpg", "projects/works/4.jpg",
+            "projects/works/5.png", "projects/works/6.png"]
+        };
+        
+        let currentProject = 0;
+        let currentSlide = 0;
+        
+        function changeSlide(newSrc) {
+            popupImg.classList.remove("show"); // Start fade out
+            setTimeout(() => {
+                popupImg.src = newSrc;
+                popupImg.classList.add("show"); // Fade in
+            }, 200);
+        }
+        
+        buttons.forEach((btn, index) => {
+            btn.addEventListener("click", () => {
+                currentProject = index;
+                currentSlide = 0;
+                changeSlide(slides[currentProject][currentSlide]);
+                popup.style.display = "flex";
+            });
+        });
+        
+        closeBtn.onclick = () => {
+            popup.style.display = "none";
+        };
+        
+        nextBtn.onclick = () => {
+            currentSlide = (currentSlide + 1) % slides[currentProject].length;
+            changeSlide(slides[currentProject][currentSlide]);
+        };
+        
+        prevBtn.onclick = () => {
+            currentSlide = (currentSlide - 1 + slides[currentProject].length) % slides[currentProject].length;
+            changeSlide(slides[currentProject][currentSlide]);
+        };
+ </script>
 
 </body>
 </html>
