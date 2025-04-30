@@ -425,8 +425,8 @@ h1{
     max-width: 280px;
     border-radius: 5px;
     object-fit: cover;
-
 }
+
 .project-card h3{
     font-size: 30px;
 }
@@ -495,9 +495,8 @@ h1{
 }
 .close {
     position: absolute;
-    top: 90px;
-    right: 200px;
-    font-size: 50px;
+    top: 0; right: 30px;
+    font-size:50px;
     color: red;
     cursor: pointer;
     z-index: 100;
@@ -621,6 +620,7 @@ footer{
         margin-top: 20%;
         font-size: 15px;
     }
+
 }
 
 @media (max-width: 390px) {
@@ -687,6 +687,17 @@ footer{
     .footer-area{
         padding: 20px;
         margin-top: 10%;
+    }
+    .project-box{
+        margin-top: 30%;
+        flex-direction: column;
+    }
+    .project-card{
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    .project-card img{
+        max-width: 250px;
     }
 
 }
