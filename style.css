@@ -33,12 +33,12 @@
     margin: 0;
     box-sizing: border-box; 
     font-family: Poppins;
+    transition: 0.3s ease;
 }
 body{
     background-color: black;
     opacity: 0;
     animation: fadeIn 2s forwards;
-    transition: 1s ease-in-out;
 }
 html{
     scroll-behavior:smooth;
@@ -709,6 +709,9 @@ footer{
     }
     .project-card img{
         max-width: 250px;
+    }
+    .btn{
+        text-align: center;
     }
 
 }
