@@ -620,6 +620,17 @@ footer{
         margin-top: 20%;
         font-size: 15px;
     }
+    .project-box{
+        margin-top: 30%;
+        flex-direction: column;
+    }
+    .project-card{
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    .project-card img{
+        max-width: 250px;
+    }
 
 }
 
